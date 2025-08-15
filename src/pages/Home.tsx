@@ -1,9 +1,8 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect } from "react";
 import styled, { keyframes } from "styled-components";
 import Typed from "typed.js";
 import {
 	FaFacebookSquare,
-	FaInstagram,
 	FaGithub,
 	FaLinkedin,
 } from "react-icons/fa";
@@ -184,11 +183,7 @@ const TypedLine = styled.div`
 	font-size: 20px;
 	min-height: 28px;
 `;
-const Tagline = styled.p`
-	font-size: 18px;
-	opacity: 0.95;
-	margin-top: 4px;
-`;
+
 
 const Buttons = styled.div`
 	display: flex;

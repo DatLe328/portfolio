@@ -3,7 +3,7 @@ import { useState } from "react";
 import imgMe from "../assets/mainPicture.jpg"; // Đảm bảo rằng ảnh của bạn đã được lưu trong thư mục assets
 
 function AboutMe() {
-	const [highlightText, setHighlightText] = useState([
+	const [highlightText] = useState([
 		{ context: "Front-end with React & TypeScript" },
 		{ context: "Back-end with Python (Django) & Java" },
 		{ context: "Designing and documenting RESTful APIs" },

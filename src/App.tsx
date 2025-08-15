@@ -1,4 +1,3 @@
-import React from 'react';
 import DefaultLayout from "./components/DefaultLayout";
 import Home from "./pages/Home";
 import About from "./pages/About";

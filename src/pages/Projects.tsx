@@ -1,10 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 
-import imgLegal from "../assets/test.jpg";
-import imgDocs from "../assets/test.jpg";
-import imgLearn from "../assets/test.jpg";
-import imgDissertation from "../assets/test.jpg";
+import imgTest from "../assets/test.jpg";
 
 type Tech = { nameTech: string };
 type Project = {
@@ -21,7 +18,7 @@ type Project = {
 
 const PROJECTS: Project[] = [
   {
-    img: imgLegal,
+    img: imgTest,
     name: "Course Management Mobile App (Mar – May 2025)",
     des: "Cross-platform mobile app to manage online courses with scheduling and secure user authentication. I led the backend with Django REST, integrated OAuth 2.0, and connected the React Native frontend. Backend deployed on PythonAnywhere; we ran sprints and code reviews.",
     tech: [
@@ -40,7 +37,7 @@ const PROJECTS: Project[] = [
       "Deepened skills in Django REST, OAuth 2.0, API documentation with Swagger, CI/CD basics, and coordinating sprints with code reviews.",
   },
   {
-    img: imgDocs,
+    img: imgTest,
     name: "Clinic Management Web App (Oct – Dec 2024)",
     des: "Web system for managing patient appointments, medical records, and admin tasks. Designed the MySQL schema, implemented real-time API endpoints with Flask, and built an admin panel for efficient clinic operations.",
     tech: [

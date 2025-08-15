@@ -1,6 +1,5 @@
 import React from 'react';
 import Header from './Header';
-import Footer from './Footer';
 import Snow from "./Snow";
 import SnowImg1 from '../assets/snow1.png';
 import SnowImg2 from '../assets/snow2.png';
