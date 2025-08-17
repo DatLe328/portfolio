@@ -13,14 +13,12 @@ const Header: React.FC = () => {
   const [open, setOpen] = useState(false);
   const panelRef = useRef<HTMLDivElement | null>(null);
 
-  // khóa scroll khi mở menu trên mobile
   useEffect(() => {
     const prev = document.body.style.overflow;
     document.body.style.overflow = open ? "hidden" : prev || "";
     return () => { document.body.style.overflow = prev; };
   }, [open]);
 
-  // click ra ngoài & ESC để đóng
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => e.key === "Escape" && setOpen(false);
     const onClick = (e: MouseEvent) => {
@@ -73,7 +71,6 @@ const Header: React.FC = () => {
           </ul>
         </NavDesktop>
 
-        {/* nút hamburger (mobile) */}
         <Burger
           aria-label="Mở menu"
           aria-controls="mobile-menu"
@@ -87,7 +84,6 @@ const Header: React.FC = () => {
         </Burger>
       </Bar>
 
-      {/* panel trượt (mobile) */}
       <Panel
         id="mobile-menu"
         ref={panelRef}

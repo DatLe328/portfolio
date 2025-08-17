@@ -3,9 +3,7 @@ import About from "../pages/About";
 import Projects from "../pages/Projects";
 import Achievement from "../pages/Achievement";
 import DefaultLayout from "../components/DefaultLayout";
-// import Contact from "../pages/Contact";
 
-// Định nghĩa các route và layout
 export const publicRoutes = [
   {
     path: "/",

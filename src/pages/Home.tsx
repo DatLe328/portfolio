@@ -70,7 +70,7 @@ const Home: React.FC = () => {
 						<span id="typed" />
 					</TypedLine>
 					<Buttons>
-						<a href="#cv">
+						<a href="https://www.overleaf.com/read/hwyjhsndpbgy#873b50" target="_blank">
 							<Btn variant="outline">See my CV</Btn>
 						</a>
 						<a href="#contact">

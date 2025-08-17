@@ -1,12 +1,12 @@
 import React, { useEffect, useRef } from "react"
 
 type SnowProps = {
-  density?: number;           // mật độ bông (càng nhỏ càng ít)
-  color?: string;             // màu dùng khi fallback (không có ảnh)
-  imageSrcs?: string[];       // danh sách đường dẫn ảnh bông tuyết
-  maxFlakes?: number;         // trần số bông tuyết
-  minFlakes?: number;         // sàn số bông tuyết
-  sizeScale?: number;         // hệ số phóng ảnh theo bán kính (mặc định 2.6)
+  density?: number;
+  color?: string;
+  imageSrcs?: string[];
+  maxFlakes?: number;
+  minFlakes?: number;
+  sizeScale?: number;
 };
 
 type Flake = {
@@ -40,7 +40,7 @@ const Snow: React.FC<SnowProps> = ({
       const img = new Image();
       img.decoding = "async";
       img.loading = "eager";
-      img.src = src;           // nếu để ảnh trong /public, dùng đường dẫn bắt đầu bằng /
+      img.src = src;
       img.onload = () => {
         loaded++;
         if (loaded === srcs.length) imgsReadyRef.current = true;
@@ -54,12 +54,12 @@ const Snow: React.FC<SnowProps> = ({
   };
 
   const makeFlake = (w: number, h: number): Flake => {
-    const r = Math.random() * 2 + 1.5;                 // bán kính 1.5–3.5
-    const vy = 0.6 + Math.random() * 1.2 + r * 0.05;   // rơi dọc
-    const vx = (Math.random() - 0.5) * 0.6;            // gió ngang
-    const a  = 0.4 + Math.random() * 0.6;              // alpha
-    const rot = Math.random() * Math.PI * 2;           // góc xoay hiện tại
-    const vr  = (Math.random() - 0.5) * 0.01;          // tốc độ xoay (-0.005 ~ 0.005 rad/f)
+    const r = Math.random() * 2 + 1.5;
+    const vy = 0.6 + Math.random() * 1.2 + r * 0.05;
+    const vx = (Math.random() - 0.5) * 0.6;
+    const a  = 0.4 + Math.random() * 0.6;
+    const rot = Math.random() * Math.PI * 2;
+    const vr  = (Math.random() - 0.5) * 0.01;
     const imgIndex = imgsRef.current.length
       ? Math.floor(Math.random() * imgsRef.current.length)
       : -1;
@@ -116,7 +116,6 @@ const Snow: React.FC<SnowProps> = ({
       const useImages = imgsRef.current.length > 0 && imgsReadyRef.current;
 
       if (!useImages) {
-        // Fallback: vẽ tròn
         ctx.fillStyle = color;
       }
 
@@ -134,7 +133,7 @@ const Snow: React.FC<SnowProps> = ({
 
         if (useImages && f.imgIndex >= 0) {
           const img = imgsRef.current[f.imgIndex];
-          const size = f.r * sizeScale;              // kích thước theo bán kính
+          const size = f.r * sizeScale;
           ctx.save();
           ctx.translate(f.x * dpr, f.y * dpr);
           ctx.rotate(f.rot);
@@ -166,7 +165,6 @@ const Snow: React.FC<SnowProps> = ({
       if (rafRef.current) cancelAnimationFrame(rafRef.current);
       window.removeEventListener("resize", onResize);
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [density, color, maxFlakes, minFlakes, sizeScale]);
 
   return <canvas className="snow-canvas" ref={canvasRef} aria-hidden="true" />;

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { useState } from "react";
-import imgMe from "../assets/mainPicture.jpg"; // Đảm bảo rằng ảnh của bạn đã được lưu trong thư mục assets
+import imgMe from "../assets/mainPicture.jpg";
 
 function AboutMe() {
 	const [highlightText] = useState([
@@ -11,7 +11,7 @@ function AboutMe() {
 		{ context: "Mobile apps with React Native" },
 		{
 			context:
-				"AI/NLP: job–candidate matching, skills extraction, ranking",
+				"AI/NLP",
 		},
 	]);
 
