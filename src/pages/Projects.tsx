@@ -1,10 +1,14 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import imgQLST from "../assets/qlst.png";
-import imgTest from "../assets/test.jpg";
+// import imgTest from "../assets/test.jpg";
 import imgCourse from "../assets/courseLogin.jpg"
+import imgClinic from "../assets/clinicManagement.png"
+import imgHolder from "../assets/placeHolder.jpg"
 
 type Tech = { nameTech: string };
+
+
 type Project = {
 	img: string;
 	name: string;
@@ -18,6 +22,25 @@ type Project = {
 };
 
 const PROJECTS: Project[] = [
+	{
+		img: imgHolder,
+		name: "AI Powered Recruitment Platform",
+		des: "Solo-built web app that matches recruiters and candidates via a two-stage search: extract/normalize skills → retrieve with BM25 → re-rank using SBERT similarity + LightGBM.",
+		tech: [
+			{ nameTech: "Django REST" },
+			{ nameTech: "Sentence-Transformers (SBERT)" },
+			{ nameTech: "React" },
+			{ nameTech: "LightGBM (learning-to-rank)" },
+			{ nameTech: "Elasticsearch (BM25)" },
+			{ nameTech: "Swagger" },
+			{ nameTech: "Git" },
+		],
+		linkLive: "https://www.youtube.com/",
+		linkGit: "https://github.com/DatLe328/courseapp",
+		member: "2",
+		role: "End-to-end owner—data processing, model training, API/backend, simple UI, and deployment.",
+		result: "Working prototype that outperforms a BM25-only baseline in offline tests; reproducible ML pipeline and dockerized services.",
+	},
 	{
 		img: imgCourse,
 		name: "Course Management Mobile App",
@@ -37,7 +60,7 @@ const PROJECTS: Project[] = [
 		result: "Deepened skills in Django REST, OAuth 2.0, API documentation with Swagger, CI/CD basics, and coordinating sprints with code reviews.",
 	},
 	{
-		img: imgTest,
+		img: imgClinic,
 		name: "Clinic Management Web App",
 		des: "Web system for managing patient appointments, medical records, and admin tasks. Designed the MySQL schema, implemented real-time API endpoints with Flask, and built an admin panel for efficient clinic operations.",
 		tech: [
@@ -46,9 +69,10 @@ const PROJECTS: Project[] = [
 			{ nameTech: "HTML" },
 			{ nameTech: "CSS" },
 			{ nameTech: "Bootstrap" },
+			{ nameTech: "Cloudinary" },
 			{ nameTech: "Git" },
 		],
-		linkLive: "",
+		linkLive: "https://datlevipprono1.pythonanywhere.com/",
 		linkGit: "https://github.com/DatLe328/ClinicManagement",
 		member: "2",
 		role: "Full-stack with focus on backend and database design; built admin UI.",
@@ -56,8 +80,8 @@ const PROJECTS: Project[] = [
 	},
 	{
 		img: imgQLST,
-		name: "Hệ thống Quản lý Siêu thị",
-		des: "Ứng dụng desktop quản lý nội vụ siêu thị: đăng nhập & phân quyền, chấm công theo ca, quản lý hàng hóa–kho–lô hàng–hóa đơn–đặt hàng, tính lương và báo cáo thống kê.",
+		name: "Supermarket Internal Management System",
+		des: "A desktop application for supermarket back-office operations: sign-in & role-based access control; shift-based timekeeping; management of products, warehouse inventory, lots/batches, invoices, and purchase orders; payroll calculation and statistical reporting.",
 		tech: [
 			{ nameTech: "C#/.NET" },
 			{ nameTech: "WinForms" },
@@ -67,8 +91,8 @@ const PROJECTS: Project[] = [
 		linkLive: "",
 		linkGit: "https://github.com/DatLe328/Quan-ly-noi-vu-sieu-thi.git",
 		member: "2",
-		role: "Phân tích & phát triển: thiết kế ERD/RD; xây các module đăng nhập/phân quyền, kho–lô hàng–hóa đơn, chấm công–tính lương, báo cáo.",
-		result: "Hoàn thiện các phân hệ cốt lõi, dữ liệu tập trung, phân quyền theo vai trò.",
+		role: "Analysis & development: designed the ERD/RD; built modules for login/authorization, warehouse–lots–invoices, timekeeping–payroll, and reporting.",
+		result: "Completed the core subsystems; centralized data; role-based permissions.",
 	},
 ];
 
